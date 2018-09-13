@@ -1,10 +1,12 @@
-// app.js This file will be used for configuring the app,
-
-/**
- * All of the logic will be put in its respective directory regarding the specific feature it will be implementing. We use module.exports to make this app object visible to the rest of the program when we call for it using require(
- *
- */
-
+// app.js 
 var express = require('express');
 var app = express();
+var db = require('./db'); //ADD THIS LINE
+
+
+// ADD THESE TWO LINES
+var UserController = require('./user/UserController');
+app.use('/users', UserController);
 module.exports = app;
+
+// An app.js for configuring the application
